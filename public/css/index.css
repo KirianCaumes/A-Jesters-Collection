@@ -1,0 +1,61 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+}
+body::after {
+    content: "";
+    background-image: url("../img/background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+body .field-container {
+    position: absolute;
+    right: 0;
+    opacity: 0.1;
+    z-index: 1;
+}
+body .field-container .field {
+    position: relative;
+}
+
+body .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body .container img {
+    margin: 0 auto;
+    display: block;
+}
+
+body .container img.logo {
+    max-width: 250px;
+}
+
+body .container .columns .column a {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+body .container .columns .column a img {
+    max-height: 75px;
+}
+
+@media screen and (max-width: 769px) {
+    body .container {
+        padding: 50px 0;
+    }
+}

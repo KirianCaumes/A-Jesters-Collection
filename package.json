@@ -1,0 +1,16 @@
+{
+  "name": "jesterscollection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.0",
+    "bulma-extensions": "^6.2.7",
+    "bulmaswatch": "^0.8.1"
+  }
+}
