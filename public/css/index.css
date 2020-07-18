@@ -52,10 +52,25 @@ body .container .columns .column a {
 
 body .container .columns .column a img {
     max-height: 75px;
+    opacity: 0.8;
+    transition: 0.25s;
+}
+
+body .container .columns .column a:hover img {
+    opacity: 1;
 }
 
 @media screen and (max-width: 769px) {
     body .container {
         padding: 50px 0;
     }
+    body .container .columns .column {
+        padding: 25px 0;
+    }
+}
+
+a:active,
+a:focus {
+    outline: 0;
+    -moz-outline-style: none;
 }
