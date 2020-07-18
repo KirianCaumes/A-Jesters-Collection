@@ -1,0 +1,88 @@
+/* Made with Scss ;) */
+
+@import "../../node_modules/bulmaswatch/cyborg/_variables.scss";
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
+@import "../../node_modules/bulmaswatch/cyborg/_overrides.scss";
+
+/* GLOBAL **/
+a {
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-style: none;
+  }
+}
+
+::selection {
+  background: #c1bcb8;
+}
+
+/* PAGE */
+body {
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  &::after {
+    content: "";
+    background-image: url("../img/background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+  }
+  .field-container {
+    position: absolute;
+    right: 0;
+    opacity: 0.1;
+    z-index: 1;
+    .field {
+      position: relative;
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      margin: 0 auto;
+      display: block;
+      &.logo {
+        max-width: 250px;
+        border-radius: 10%;
+      }
+    }
+    .columns .column a {
+      height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      h3 {
+        margin-top: 1rem;
+      }
+      img {
+        max-height: 75px;
+        opacity: 0.8;
+        transition: 0.25s;
+      }
+      &:hover img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  body .container {
+    padding: 50px 0;
+    .columns .column {
+      padding: 25px 0;
+    }
+  }
+}
