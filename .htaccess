@@ -5,3 +5,5 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 RewriteRule ^$ /public/ [L]
 RewriteRule ^img/(.*)$ /public/img/$1 [L,NC]
 RewriteRule ^css/(.*)$ /public/css/$1 [L,NC]
+
+Options -Indexes

@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
   &::after {
     content: "";
-    background-image: url("../img/background.png");
+    background-image: url("../img/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,24 +50,24 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    .separator {
+      height: 10vh;
+    }
     img {
       margin: 0 auto;
       display: block;
       &.logo {
-        max-width: 250px;
+        height: 250px;
+        width: 250px;
         border-radius: 10%;
       }
     }
     .columns .column a {
-      height: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
       h3 {
         margin-top: 1rem;
       }
       img {
-        max-height: 75px;
+        height: 75px;
         opacity: 0.8;
         transition: 0.25s;
       }
