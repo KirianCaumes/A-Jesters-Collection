@@ -13,8 +13,11 @@ RewriteRule (.*) https://%{HTTP_HOST}
 # Prevent user access subfolders
 Options -Indexes
 
-# 404 page
-ErrorDocument 404 /404
+# Error
+ErrorDocument 400 /error
+ErrorDocument 403 /error
+ErrorDocument 404 /error
+ErrorDocument 500 /error
 
 <IfModule mod_expires.c>
     # Enable expirations
