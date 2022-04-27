@@ -9,6 +9,7 @@ A small website made with basic HTML/CSS(SCSS)/JS.
 Run SCSS watch build and serve dev (with hot reloading) with :
 
 ```sh
+npm i # first time only
 npm start
 ```
 

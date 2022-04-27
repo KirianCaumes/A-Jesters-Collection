@@ -4,6 +4,7 @@
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
 @import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/grid/columns.sass";
 @import "../../node_modules/bulma/sass/helpers/_all.sass";
@@ -12,6 +13,7 @@
 
 /* GLOBAL **/
 a {
+
   &:active,
   &:focus {
     outline: 0;
@@ -28,6 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   overflow-x: hidden;
+
   &::after {
     content: "";
     background-image: url("../img/background.jpg");
@@ -42,60 +45,86 @@ body {
     position: fixed;
     z-index: -1;
   }
-  .field-container {
-    position: absolute;
+
+  .gdpr-banner {
+    background-color: rgba(0, 0, 0, 0.75);
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    position: fixed;
     right: 0;
-    opacity: 0.1;
+    text-align: center;
     z-index: 1;
-    .field {
-      position: relative;
+    font-size: 0.8rem;
+    display: none;
+    justify-content: center;
+
+    @include until($desktop) {
+      flex-direction: column;
+    }
+
+    p.gdpr-banner-content {
+      color: #fff;
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      text-align: center;
     }
   }
+
   .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @include until($desktop) {
+      padding: 50px 0;
+    }
+
     h2 {
-      margin-bottom: 0.75rem!important;
-      & + p {
+      margin-bottom: 0.75rem !important;
+
+      &+p {
         span {
           font-style: initial;
         }
       }
     }
+
     .separator {
       height: 10vh;
     }
+
     img {
       margin: 0 auto;
       display: block;
+
       &.logo {
         height: 250px;
         width: 250px;
         border-radius: 10%;
       }
     }
-    .columns .column a {
-      h3 {
-        margin-top: 1rem;
-      }
-      img {
-        height: 75px;
-        opacity: 0.8;
-        transition: 0.25s;
-      }
-      &:hover img {
-        opacity: 1;
-      }
-    }
-  }
-}
 
-@media screen and (max-width: 769px) {
-  body .container {
-    padding: 50px 0;
     .columns .column {
-      padding: 25px 0;
+      @include until($desktop) {
+        padding: 25px 0;
+      }
+
+      a {
+        h3 {
+          margin-top: 1rem;
+        }
+
+        img {
+          height: 75px;
+          opacity: 0.8;
+          transition: 0.25s;
+        }
+
+        &:hover img {
+          opacity: 1;
+        }
+      }
     }
   }
 }

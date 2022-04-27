@@ -1,31 +1,85 @@
-//https://developers.google.com/analytics/devguides/collection/gajs/#disable
-const gaProperty = 'UA-172788722-2'
-
-const disableStr = 'ga-disable-' + gaProperty
-
-// Disable tracking if the opt-out cookie exists.
-if (document.cookie.indexOf(disableStr + '=true') > -1) {
-    window[disableStr] = true;
-    document.getElementById("checkbox").checked = false
+/**
+ * Set a cookie
+ * @param {string} key Key
+ * @param {string} value Value
+ */
+function setCookie(key, value) {
+    document.cookie = `${key}=${value || ''}; path=/;SameSite=Lax`
 }
 
-// Opt-out function
-function gaOptout(isChecked) {
-    if (!isChecked) {
-        document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; SameSite=None; Secure; path=/'
-        window[disableStr] = true
-    } else {
-        document.cookie = disableStr + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; SameSite=None; Secure; path=/'
-        window[disableStr] = false
+/**
+ * Get a cookie
+ * @param {string} key Key
+ * @returns {string} Cookie
+ */
+function getCookie(key) {
+    const cookieName = `${key}=`
+    const cookieArray = document.cookie.split(';')
+
+    for (let cookie of cookieArray) {
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
     }
 }
 
-//Init Google Analytics
-window.dataLayer = window.dataLayer || []
-
-function gtag() {
-    dataLayer.push(arguments)
+/**
+ * Delete a cookie
+ * @param {string} key Key
+ * @returns {string} Cookie
+ */
+function deleteCookie(key) {
+    document.cookie = key + '=; SameSite=Lax; path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-gtag('js', new Date())
 
-gtag('config', gaProperty)
+const GA_ID = 'G-FPQXHD430B'
+const ACCEPT_COOKIE_NAME = 'accept_cookies'
+const disableGaStr = `ga-disable-${GA_ID}`
+function gtag() { dataLayer.push(arguments) }
+
+/**
+ * On accept cookie
+ */
+function onAccept() {
+    setCookie(ACCEPT_COOKIE_NAME, 'true')
+    document.getElementsByClassName('gdpr-banner')[0].style.display = 'none'
+
+    window[disableGaStr] = false
+
+    //Init Google Analytics
+    window.dataLayer = window.dataLayer || []
+
+    // Init tracking
+    gtag('js', new Date())
+    gtag('config', GA_ID, { cookie_flags: 'secure;samesite=none' })
+}
+
+/**
+ * On refuse cookie
+ */
+function onRefuse() {
+    setCookie(ACCEPT_COOKIE_NAME, 'false')
+    deleteCookie('_ga')
+    deleteCookie('_gat')
+    deleteCookie('_gid')
+    document.getElementsByClassName('gdpr-banner')[0].style.display = 'none'
+    window[disableGaStr] = true
+}
+
+// On content loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const cookie = getCookie(ACCEPT_COOKIE_NAME)
+
+    if (!cookie)
+        document.getElementsByClassName('gdpr-banner')[0].style.display = 'flex'
+
+    if (cookie === 'true') {
+        onAccept()
+    } else {
+        window[disableGaStr] = true
+    }
+})
