@@ -4,7 +4,7 @@
  * @param {string} value Value
  */
 function setCookie(key, value) {
-    document.cookie = `${key}=${value || ''}; path=/;SameSite=Lax`
+    document.cookie = `${key}=${value || ''}; path=/;SameSite=Lax; expires=Fri, 31 Dec 9999 23:59:59 GMT`
 }
 
 /**

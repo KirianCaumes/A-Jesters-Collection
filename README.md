@@ -12,10 +12,3 @@ Run SCSS watch build and serve dev (with hot reloading) with :
 npm i # first time only
 npm start
 ```
-
-## Go production
-
-Copy on FTP:
-
-- /public
-- .htaccess
