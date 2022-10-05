@@ -12,14 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "bulma-extensions": "^6.2.7",
     "bulmaswatch": "^0.8.1",
-    "concurrently": "^7.1.0",
-    "live-server": "^1.2.1",
-    "node-sass": "^7.0.1"
+    "concurrently": "^7.4.0",
+    "live-server": "^1.2.2",
+    "node-sass": "^7.0.3"
   },
   "engines": {
-    "node": "16.14.x"
+    "node": "16.x.x"
   }
 }
