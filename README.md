@@ -1,6 +1,6 @@
 # A Jester's Collection
 
-A Jesters Collection website - Personnal website of my In Flames collection: [jesterscollection.kiriancaumes.fr](https://jesterscollection.kiriancaumes.fr/).
+A Jesters Collection website - Personal website of my In Flames collection: [jesterscollection.kiriancaumes.fr](https://jesterscollection.kiriancaumes.fr/).
 
 A small website made with basic HTML/CSS(SCSS)/JS.
 
