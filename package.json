@@ -1,16 +1,33 @@
 {
   "name": "jesterscollection",
+  "description": "A Jesters Collection website - Personal website of my In Flames collection",
   "version": "1.0.0",
-  "description": "",
+  "author": "KirianCaumes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KirianCaumes/A-Jesters-Collection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KirianCaumes/A-Jesters-Collection/issues"
+  },
+  "homepage": "https://github.com/KirianCaumes/A-Jesters-Collection#readme",
+  "engines": {
+    "node": "20.x.x"
+  },
   "main": "index.js",
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.me/KirianCaumes"
+    }
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js",
     "scss": "node-sass -w \"./public/scss\" -o \"./public/css\" --output-style compressed",
     "start": "concurrently \"npm run scss\" \"npm run serve\""
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bulma": "^0.9.4",
     "bulma-extensions": "^6.2.7",
@@ -18,8 +35,5 @@
     "concurrently": "^8.2.2",
     "live-server": "^1.2.2",
     "node-sass": "^9.0.0"
-  },
-  "engines": {
-    "node": "20.x.x"
   }
 }
