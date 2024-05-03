@@ -113,14 +113,26 @@ body {
           margin-top: 1rem;
         }
 
-        img {
+        picture {
           height: 75px;
-          filter: grayscale(15%);
-          transition: 0.25s;
+          aspect-ratio: 1 / 1;
+          display: flex;
+          margin: 0 auto;
+          background: white;
+          padding: 0.5rem;
+          border-radius: 15%;
+          transition: 0.1s transform;
+
+          img {
+            height: auto;
+            transition: 0.25s;
+            align-self: center;
+            max-height: 100%;
+          }
         }
 
-        &:hover img {
-          filter: grayscale(0%);
+        &:hover picture {
+          transform: scale(1.05)
         }
       }
     }
