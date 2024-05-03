@@ -28,10 +28,11 @@
     "scss": "sass -w \"./public/scss:./public/css\" --style=compressed --load-path=node_modules --quiet-deps",
     "start": "concurrently \"npm run scss\" \"npm run serve\""
   },
-  "dependencies": {
-    "bulma": "^0.9.4",
-    "bulma-extensions": "^6.2.7",
-    "bulmaswatch": "^0.8.1",
+  "overrides": {
+    "chokidar": "3.6.0"
+  },
+  "devDependencies": {
+    "bulma": "^1.0.0",
     "concurrently": "^8.2.2",
     "live-server": "^1.2.2",
     "sass": "^1.76.0"

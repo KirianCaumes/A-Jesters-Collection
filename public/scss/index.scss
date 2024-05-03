@@ -1,15 +1,13 @@
-/* Made with Scss ;) */
+@use "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
 
-@import "bulmaswatch/cyborg/_variables.scss";
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/base/_all.sass";
-@import "bulma/sass/elements/container.sass";
-@import "bulma/sass/elements/button.sass";
-@import "bulma/sass/elements/title.sass";
-@import "bulma/sass/grid/columns.sass";
-@import "bulma/sass/helpers/_all.sass";
-@import "bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
-@import "bulmaswatch/cyborg/_overrides.scss";
+@use "bulma/sass/layout/container";
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/title";
+@use "bulma/sass/grid/columns";
+@use "bulma/sass/helpers";
 
 /* GLOBAL **/
 a {
@@ -59,7 +57,7 @@ body {
     display: none;
     justify-content: center;
 
-    @include until($desktop) {
+    @include mixins.until(initial-variables.$desktop) {
       flex-direction: column;
     }
 
@@ -76,7 +74,7 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    @include until($desktop) {
+    @include mixins.until(initial-variables.$desktop) {
       padding: 50px 25px;
     }
 
@@ -106,7 +104,7 @@ body {
     }
 
     .columns .column {
-      @include until($desktop) {
+      @include mixins.until(initial-variables.$desktop) {
         padding: 25px 0;
       }
 
