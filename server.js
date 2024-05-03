@@ -3,7 +3,7 @@ require("live-server").start({
     port: 3000,
     host: "0.0.0.0",
     root: "./public",
-    open: true,
+    open: false,
     ignore: './public/scss',
     file: "index.html",
     wait: 0,

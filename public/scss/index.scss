@@ -1,15 +1,15 @@
 /* Made with Scss ;) */
 
-@import "../../node_modules/bulmaswatch/cyborg/_variables.scss";
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-@import "../../node_modules/bulma/sass/grid/columns.sass";
-@import "../../node_modules/bulma/sass/helpers/_all.sass";
-@import "../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
-@import "../../node_modules/bulmaswatch/cyborg/_overrides.scss";
+@import "bulmaswatch/cyborg/_variables.scss";
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/title.sass";
+@import "bulma/sass/grid/columns.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
+@import "bulmaswatch/cyborg/_overrides.scss";
 
 /* GLOBAL **/
 a {

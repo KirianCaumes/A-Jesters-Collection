@@ -25,7 +25,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js",
-    "scss": "node-sass -w \"./public/scss\" -o \"./public/css\" --output-style compressed",
+    "scss": "sass -w \"./public/scss:./public/css\" --style=compressed --load-path=node_modules --quiet-deps",
     "start": "concurrently \"npm run scss\" \"npm run serve\""
   },
   "dependencies": {
@@ -34,6 +34,6 @@
     "bulmaswatch": "^0.8.1",
     "concurrently": "^8.2.2",
     "live-server": "^1.2.2",
-    "node-sass": "^9.0.0"
+    "sass": "^1.76.0"
   }
 }
