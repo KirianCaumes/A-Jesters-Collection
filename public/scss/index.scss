@@ -157,15 +157,24 @@ body {
 
 
           &:hover {
-            transform: translateY(-4px);
             background: variables.$backdrop-light-hover;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+
+            @include mixins.support-hover {
+              transform: translateY(-4px);
+            }
           }
 
           picture {
             width: variables.$icon-size-md;
             height: variables.$icon-size-md;
             margin-bottom: 0.8rem;
+
+            @include mixins.until(variables.$tablet) {
+              margin-bottom: 0;
+              width: variables.$icon-size-sm;
+              height: variables.$icon-size-sm;
+            }
 
             img {
               width: 100%;
@@ -175,12 +184,6 @@ body {
 
               &.has-border-radius {
                 border-radius: variables.$border-radius-sm;
-              }
-
-              @include mixins.until(variables.$tablet) {
-                margin-bottom: 0;
-                width: variables.$icon-size-sm;
-                height: variables.$icon-size-sm;
               }
             }
           }
