@@ -163,11 +163,15 @@ body {
           }
 
           picture {
+            width: variables.$icon-size-md;
+            height: variables.$icon-size-md;
+            margin-bottom: 0.8rem;
+
             img {
-              width: variables.$icon-size-md;
-              height: variables.$icon-size-md;
-              margin-bottom: 0.8rem;
+              width: 100%;
+              height: 100%;
               object-fit: contain;
+              color: transparent;
 
               &.has-border-radius {
                 border-radius: variables.$border-radius-sm;
