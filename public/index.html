@@ -116,6 +116,48 @@
         name="theme-color"
         content="#b91d47"
     >
+
+    <link
+        rel="preconnect"
+        href="https://www.googletagmanager.com"
+        crossorigin
+    >
+    <link
+        rel="preconnect"
+        href="https://www.google-analytics.com"
+        crossorigin
+    >
+    <link
+        rel="dns-prefetch"
+        href="https://www.instagram.com"
+    >
+    <link
+        rel="dns-prefetch"
+        href="https://www.discogs.com"
+    >
+    <link
+        rel="dns-prefetch"
+        href="https://www.youtube.com"
+    >
+    <link
+        rel="dns-prefetch"
+        href="https://docs.google.com"
+    >
+    <link
+        rel="dns-prefetch"
+        href="https://in-flames-closet.kiriancaumes.fr"
+    >
+    <link
+        rel="preload"
+        href="/img/ajesterscollection-logo.jpg"
+        as="image"
+        fetchpriority="high"
+    >
+    <link
+        rel="preload"
+        href="/img/background.jpg"
+        as="image"
+    >
     <link
         rel="stylesheet"
         href="/css/index.css"
@@ -145,14 +187,13 @@
         </div>
     </div>
 
-
-    <div class="content">
-
+    <main class="content">
         <div class="container">
             <img
                 class="logo"
                 src="/img/ajesterscollection-logo.jpg"
                 alt="A Jester's Collection Logo"
+                fetchpriority=high
             >
             <h1>A Jester's Collection</h1>
             <h2>In Flames Collection & Jesterhead</h2>
@@ -168,10 +209,16 @@
                     rel="noopener"
                     class="column"
                 >
-                    <img
-                        src="/img/instgram.png"
-                        alt="Instagram"
-                    >
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/img/instgram-small.png"
+                        >
+                        <img
+                            src="/img/instgram-normal.png"
+                            alt="Instagram"
+                        >
+                    </picture>
                     <div class="titles">
                         <h3>Instagram</h3>
                         <h4>Visual highlights of my collection</h4>
@@ -184,10 +231,16 @@
                     rel="noopener"
                     class="column"
                 >
-                    <img
-                        src="/img/discogs.png"
-                        alt="Discogs"
-                    >
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/img/discogs-small.png"
+                        >
+                        <img
+                            src="/img/discogs-normal.png"
+                            alt="Discogs"
+                        >
+                    </picture>
                     <div class="titles">
                         <h3>Discogs</h3>
                         <h4>Browse my full collection</h4>
@@ -200,10 +253,16 @@
                     rel="noopener"
                     class="column"
                 >
-                    <img
-                        src="/img/youtube.png"
-                        alt="YouTube"
-                    >
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/img/youtube-small.png"
+                        >
+                        <img
+                            src="/img/youtube-normal.png"
+                            alt="YouTube"
+                        >
+                    </picture>
                     <div class="titles">
                         <h3>YouTube</h3>
                         <h4>Discover uncommon video content</h4>
@@ -216,11 +275,17 @@
                     rel="noopener"
                     class="column"
                 >
-                    <img
-                        src="/img/live.jpg"
-                        alt="Bootlegs"
-                        class="has-border-radius"
-                    >
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/img/live-small.jpg"
+                        >
+                        <img
+                            src="/img/live-normal.jpg"
+                            alt="Bootlegs"
+                            class="has-border-radius"
+                        >
+                    </picture>
                     <div class="titles">
                         <h3>Bootlegs</h3>
                         <h4>Relive the band's live legacy</h4>
@@ -233,10 +298,16 @@
                     rel="noopener"
                     class="column"
                 >
-                    <img
-                        src="/img/in-flames-closet.png"
-                        alt="In Flames Closet"
-                    >
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/img/in-flames-closet-small.png"
+                        >
+                        <img
+                            src="/img/in-flames-closet-normal.png"
+                            alt="In Flames Closet"
+                        >
+                    </picture>
                     <div class="titles">
                         <h3>In Flames Closet</h3>
                         <h4>Uncover historic artworks</h4>
@@ -246,7 +317,7 @@
         </div>
 
         <footer>© 2025 A Jester's Collection</footer>
-    </div>
+    </main>
     <script
         defer
         src="/script/index.js"

@@ -134,7 +134,7 @@ body {
         }
 
         .column {
-          width: 210px;
+          width: 215px;
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -162,20 +162,22 @@ body {
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
           }
 
-          img {
-            width: variables.$icon-size-md;
-            height: variables.$icon-size-md;
-            margin-bottom: 0.8rem;
-            object-fit: contain;
+          picture {
+            img {
+              width: variables.$icon-size-md;
+              height: variables.$icon-size-md;
+              margin-bottom: 0.8rem;
+              object-fit: contain;
 
-            &.has-border-radius {
-              border-radius: variables.$border-radius-sm;
-            }
+              &.has-border-radius {
+                border-radius: variables.$border-radius-sm;
+              }
 
-            @include mixins.until(variables.$tablet) {
-              margin-bottom: 0;
-              width: variables.$icon-size-sm;
-              height: variables.$icon-size-sm;
+              @include mixins.until(variables.$tablet) {
+                margin-bottom: 0;
+                width: variables.$icon-size-sm;
+                height: variables.$icon-size-sm;
+              }
             }
           }
 
