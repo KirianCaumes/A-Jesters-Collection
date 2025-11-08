@@ -1,0 +1,35 @@
+@use 'sass:color';
+
+
+/*** Sizing 💻 ***/
+$gap: 32px;
+$tablet: 769px;
+$desktop: 960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);
+
+
+/*** Colors 🎨 ***/
+$white: #fff;
+$backdrop-light-hover: rgba(255, 255, 255, 0.15);
+
+/*** Spacing 📐 ***/
+$spacing-xs: 0.1rem;
+$spacing-sm: 0.25rem;
+$spacing-md: 0.4rem;
+$spacing-xl: 1rem;
+$spacing-2xl: 1.2rem;
+$spacing-3xl: 1.5rem;
+$spacing-4xl: 2rem;
+
+/*** Dimensions 📏 ***/
+$logo-size: 200px;
+$icon-size-sm: 33px;
+$icon-size-md: 55px;
+
+/*** Typography 📝 ***/
+$font-size-smaller: 0.85rem;
+
+/*** Effects & Animations ✨ ***/
+$border-radius-sm: 0.4rem;
+$transition-normal: 0.25s ease;

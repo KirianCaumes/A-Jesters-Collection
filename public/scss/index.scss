@@ -1,140 +1,217 @@
-@use "bulma/sass/utilities/initial-variables";
-@use "bulma/sass/utilities/mixins";
-@use "bulma/sass/base";
-@use "bulma/sass/themes";
+@use 'bases/reset';
+@use 'bases/font';
+@use 'abstracts/mixins';
+@use 'abstracts/variables';
 
-@use "bulma/sass/layout/container";
-@use "bulma/sass/elements/button";
-@use "bulma/sass/elements/title";
-@use "bulma/sass/grid/columns";
-@use "bulma/sass/helpers";
-
-/* GLOBAL **/
-a {
-
-  &:active,
-  &:focus {
-    outline: 0;
-    outline-style: none;
-  }
-}
-
-::selection {
-  background: #c1bcb8;
-}
-
-/* PAGE */
 body {
-  min-height: 100vh;
-  display: flex;
+  font-size: 16px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #f7f7f7;
+  background: #000;
+  position: relative;
   overflow-x: hidden;
 
-  &::after {
+  ::selection {
+    background: #333;
+    color: variables.$white;
+  }
+
+  &::before {
     content: "";
     background-image: url("../img/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.25;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
     position: fixed;
     z-index: -1;
   }
 
   .gdpr-banner {
-    background-color: rgba(0, 0, 0, 0.75);
+    background: rgba(15, 15, 15, 0.66);
+    color: #ddd;
+    padding: variables.$spacing-xl;
+    font-size: 0.9rem;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    position: fixed;
     bottom: 0;
     left: 0;
-    padding: 1em;
-    position: fixed;
     right: 0;
-    text-align: center;
-    z-index: 1;
-    font-size: 0.8rem;
-    display: none;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: variables.$spacing-xl;
+    text-align: center;
+    display: none;
 
-    @include mixins.until(initial-variables.$desktop) {
+    @include mixins.until(variables.$tablet) {
       flex-direction: column;
     }
 
-    p.gdpr-banner-content {
-      color: #fff;
-      display: inline-block;
-      padding: 0.75rem 1rem;
-      text-align: center;
+    .buttons {
+      display: flex;
+      gap: variables.$spacing-xl;
+
+      .button {
+        background: #b91d47;
+        border: none;
+        color: variables.$white;
+        padding: variables.$spacing-md variables.$spacing-xl;
+        border-radius: variables.$border-radius-sm;
+        cursor: pointer;
+        font-size: variables.$font-size-smaller;
+        transition: background 0.2s;
+      }
+
+      .button:hover {
+        background: #d52a56;
+      }
+
     }
   }
 
-  .container {
+  .content {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 100dvh;
 
-    @include mixins.until(initial-variables.$desktop) {
-      padding: 50px 25px;
-    }
-
-    h2 {
-      margin-bottom: 0.75rem !important;
-
-      &+p {
-        span {
-          font-style: initial;
-        }
-      }
-    }
-
-    .separator {
-      height: 10vh;
-    }
-
-    img {
+    .container {
       margin: 0 auto;
-      display: block;
+      text-align: center;
+      max-width: 900px;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: 3rem variables.$spacing-xl 0;
 
-      &.logo {
-        height: 250px;
-        width: 250px;
-        border-radius: 10%;
+      img.logo {
+        width: variables.$logo-size;
+        height: variables.$logo-size;
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        margin-bottom: variables.$spacing-3xl;
       }
-    }
 
-    .columns .column {
-      @include mixins.until(initial-variables.$desktop) {
-        padding: 25px 0;
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
       }
 
-      a {
-        h3 {
-          margin-top: 1rem;
+      h2 {
+        font-size: 1.2rem;
+        color: #c5c5c5;
+        margin: variables.$spacing-sm 0 variables.$spacing-xl;
+      }
+
+      p {
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #e0e0e0;
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+      }
+
+      .separator {
+        width: 100%;
+        height: 1px;
+        background: variables.$backdrop-light-hover;
+        margin: variables.$spacing-4xl 0 variables.$spacing-3xl;
+      }
+
+      .columns {
+        display: flex;
+        flex-direction: row;
+        gap: variables.$spacing-xl;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include mixins.until(variables.$tablet) {
+          flex-direction: column;
         }
 
-        picture {
-          height: 75px;
-          aspect-ratio: 1 / 1;
+        .column {
+          width: 210px;
+          height: 100%;
           display: flex;
-          margin: 0 auto;
-          background: white;
-          padding: 0.5rem;
-          border-radius: 15%;
-          transition: 0.1s transform;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          padding: variables.$spacing-2xl;
+          border-radius: 1.2rem;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(12px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+          transition: transform variables.$transition-normal, background variables.$transition-normal, box-shadow variables.$transition-normal;
+
+
+          @include mixins.until(variables.$tablet) {
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            gap: variables.$spacing-xl;
+          }
+
+
+          &:hover {
+            transform: translateY(-4px);
+            background: variables.$backdrop-light-hover;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+          }
 
           img {
-            height: auto;
-            transition: 0.25s;
-            align-self: center;
-            max-height: 100%;
+            width: variables.$icon-size-md;
+            height: variables.$icon-size-md;
+            margin-bottom: 0.8rem;
+            object-fit: contain;
+
+            &.has-border-radius {
+              border-radius: variables.$border-radius-sm;
+            }
+
+            @include mixins.until(variables.$tablet) {
+              margin-bottom: 0;
+              width: variables.$icon-size-sm;
+              height: variables.$icon-size-sm;
+            }
+          }
+
+          .titles {
+            @include mixins.until(variables.$tablet) {
+              text-align: left;
+            }
+
+            h3 {
+              color: variables.$white;
+              font-size: 1rem;
+              font-weight: 600;
+            }
+
+            h4 {
+              color: #d0d0d0;
+              font-size: variables.$font-size-smaller;
+              margin-top: variables.$spacing-md;
+              line-height: 1.3;
+
+              @include mixins.until(variables.$tablet) {
+                margin-top: variables.$spacing-xs;
+              }
+            }
+
           }
         }
-
-        &:hover picture {
-          transform: scale(1.05)
-        }
       }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: variables.$spacing-4xl;
+      padding-bottom: variables.$spacing-xl;
     }
   }
 }

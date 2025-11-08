@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /404
-Disallow: /404.html
+Allow: /
 
 Sitemap : https://jesterscollection.kiriancaumes.fr/sitemap.xml

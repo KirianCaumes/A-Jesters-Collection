@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/KirianCaumes/A-Jesters-Collection#readme",
   "engines": {
-    "node": "20.x.x"
+    "node": "24.x.x"
   },
   "main": "index.js",
   "funding": [
@@ -24,17 +24,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node server.js",
-    "scss": "sass -w \"./public/scss:./public/css\" --style=compressed --load-path=node_modules --quiet-deps",
-    "start": "concurrently \"npm run scss\" \"npm run serve\""
-  },
-  "overrides": {
-    "chokidar": "3.6.0"
+    "scss": "sass -w \"./public/scss:./public/css\" --style=compressed --load-path=node_modules --quiet-deps"
   },
   "devDependencies": {
-    "bulma": "^1.0.0",
-    "concurrently": "^8.2.2",
-    "live-server": "^1.2.2",
-    "sass": "^1.76.0"
+    "sass": "^1.93.3"
   }
 }
